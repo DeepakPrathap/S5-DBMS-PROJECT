@@ -11,7 +11,10 @@ def welcome_user(username, emai):
     root.config(bg="#0896FB")  # Modern light blue background
     root.geometry("1920x1080")
     root.title(f"Welcome {username}")
-    root.iconbitmap('assets/Q.ico')
+    try:
+        root.iconbitmap('assets/Q.ico')
+    except Exception as e:
+        print(f"Warning: Could not set window icon. {e}")
 
     global settings_icon_img
     

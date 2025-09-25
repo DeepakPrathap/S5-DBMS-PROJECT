@@ -62,7 +62,7 @@ def win(username, emai):
     #############  CODE TO APPEND USER ANSWER TO VARIABLE 'USER' #################
     
         def selected():
-            if radiovar.get()==NONE:
+            if radiovar.get() == None:
                 mb.showinfo('Mandatory','choose an option')
             else:
                 rep.destroy()
@@ -70,7 +70,7 @@ def win(username, emai):
                 global user_ans
                 user_ans = radiovar.get()
                 user.append(user_ans)
-                mycursor.execute(f'insert into quiz_activity(player_email,date_played,category,question,user_answer,correct_answer) values(\'{emai}\',curdate(),\'{data[qnn-1][7]}\',\'{data[qnn-1][1]}\',\'{user_ans}\',\'{data[qnn-1][6]}\');')
+                mycursor.execute(f'insert into QUIZ_ACTIVITY(player_email,date_played,category,question,user_answer,correct_answer) values(\'{emai}\',curdate(),\'{data[qnn-1][7]}\',\'{data[qnn-1][1]}\',\'{user_ans}\',\'{data[qnn-1][6]}\');')
                 mydb.commit()
                 mydb.reconnect()
                 if qnn==tot_qns: # change no of questions here

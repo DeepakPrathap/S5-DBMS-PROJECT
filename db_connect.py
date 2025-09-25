@@ -6,7 +6,7 @@ def project_db():
     return(mysql.connector.connect( 
     host="localhost",
     user="root", 
-    passwd="Deepak@6122004",
+    passwd="Root@1234",
     database="project",
     auth_plugin='mysql_native_password'))
 

@@ -24,7 +24,12 @@ root.config(bg='#E3F2FD')  # Modern light blue background
 # can use this as final
 # it will autmtcly gets screen size and will zoom the window to dim of screen
 root.geometry(f"{root.winfo_screenwidth()}x{root.winfo_screenheight()}") # "1920x1080"
-root.state('zoomed')
+# Maximize window in a cross-platform way
+import platform
+if platform.system() == 'Windows':
+    root.state('zoomed')
+else:
+    root.attributes('-fullscreen', True)
 
 
 #################  KEYBOARD SHORTCUTS   ######################
@@ -33,7 +38,7 @@ def exit_window(e): root.destroy() # to exit window
 
 #################  ICONS & IMAGES   ######################
 
-root.iconbitmap("assets/Q.ico") # app icon (top left corner)
+
 eye_img = ImageTk.PhotoImage(master = root, file="assets/show_pw.png") # to show/hide password
   # change path of image as in your system 
 
