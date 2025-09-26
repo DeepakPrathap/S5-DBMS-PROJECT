@@ -57,16 +57,12 @@ def welcome_user(username, emai):
     """    
 
     welcome = Label(text=f"Welcome {username}", font=('Montserrat',33,'bold'),bg="#E3F2FD")
-    welcome.place(relx=0.5,rely=0.15, anchor=CENTER)
-
-    last_played = Label(text=f"Last played on 27/12/2022", font=('Montserrat',20),bg="#E3F2FD")
-    last_played.place(relx=0.5,rely=0.27, anchor=CENTER)
+    welcome.place(relx=0.5,rely=0.2, anchor=CENTER)
 
     # stat = Label(root,text="Recent gameplays", font=('Montserrat',20),bg="white")
     # stat.place(x=380,y=310)
 
-    join_date = Label(text="Player since: 23/12/2022", font=('Montserrat',15),bg="#E3F2FD")
-    join_date.place(x=20,y=719)
+    # Removed hardcoded join date as it wasn't connected to the database
 
     b_logout = Button(root,text ="Log out",font=('Montserrat',12),command=logout)
     b_logout.place(relx=.89,rely=0.016,height=30,width=80)
